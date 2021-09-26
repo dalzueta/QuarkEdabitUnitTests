@@ -2,11 +2,11 @@
 
 namespace Quark.Edabit.Exercises.Test
 {
-    public class EdabitChallengesMediumTests
+    public class EdabitChallengesMediumShould
     {
         private EdabitChallengesMedium _sut;
 
-        public EdabitChallengesMediumTests()
+        public EdabitChallengesMediumShould()
         {
             _sut = new EdabitChallengesMedium();
         }

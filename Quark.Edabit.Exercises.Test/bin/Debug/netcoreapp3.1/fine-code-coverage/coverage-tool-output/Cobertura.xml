@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.9081632653061225" branch-rate="1" lines-covered="89" lines-valid="98" branches-covered="0" branches-valid="0" complexity="28" version="0" timestamp="1632591875">
+<coverage line-rate="0.9081632653061225" branch-rate="1" lines-covered="89" lines-valid="98" branches-covered="0" branches-valid="0" complexity="28" version="0" timestamp="1632604479">
   <sources>
     <source>C:\</source>
   </sources>
@@ -151,7 +151,7 @@
             <line number="4" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesEasyTests" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesEasyTests.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesEasyShould" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesEasyShould.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -169,7 +169,7 @@
             <line number="12" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesMediumTests" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesMediumTests.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesMediumShould" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesMediumShould.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -187,9 +187,9 @@
             <line number="12" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesVeryEasyTests" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesVeryEasyTests.cs" line-rate="1" branch-rate="1" complexity="13">
+        <class name="Quark.Edabit.Exercises.Test.EdabitChallengesVeryEasyShould" filename="C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises.Test\EdabitChallengesVeryEasyShould.cs" line-rate="1" branch-rate="1" complexity="13">
           <methods>
-            <method name="SumTwoNumbers" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="SumTwoNumbers_GivenTwoNumbers_SumOfBoth" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="21" hits="4" branch="false" />
                 <line number="23" hits="4" branch="false" />
@@ -197,92 +197,92 @@
                 <line number="26" hits="4" branch="false" />
               </lines>
             </method>
-            <method name="LessThanOrEqualToZero_Return" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="LessThanOrEqualToZero_NumberLessOrEqualToZero_True" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="6" branch="false" />
+                <line number="37" hits="6" branch="false" />
+                <line number="39" hits="6" branch="false" />
+                <line number="41" hits="6" branch="false" />
                 <line number="42" hits="6" branch="false" />
-                <line number="44" hits="6" branch="false" />
-                <line number="45" hits="6" branch="false" />
               </lines>
             </method>
-            <method name="GiveMeSomething" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GiveMeSomething_GivenString_SomthingConcatToTheString" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="53" hits="3" branch="false" />
+                <line number="50" hits="3" branch="false" />
+                <line number="52" hits="3" branch="false" />
+                <line number="54" hits="3" branch="false" />
                 <line number="55" hits="3" branch="false" />
-                <line number="57" hits="3" branch="false" />
-                <line number="58" hits="3" branch="false" />
               </lines>
             </method>
-            <method name="ReverseTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="Reverse_ABoolean_TheInverse" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="65" hits="2" branch="false" />
+                <line number="62" hits="2" branch="false" />
+                <line number="64" hits="2" branch="false" />
+                <line number="66" hits="2" branch="false" />
                 <line number="67" hits="2" branch="false" />
-                <line number="69" hits="2" branch="false" />
-                <line number="70" hits="2" branch="false" />
               </lines>
             </method>
-            <method name="HowManySecondsTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="HowManySeconds_Hours_Seconds" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="79" hits="4" branch="false" />
+                <line number="76" hits="4" branch="false" />
+                <line number="78" hits="4" branch="false" />
+                <line number="80" hits="4" branch="false" />
                 <line number="81" hits="4" branch="false" />
-                <line number="83" hits="4" branch="false" />
-                <line number="84" hits="4" branch="false" />
               </lines>
             </method>
-            <method name="NameStringTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="NameString_GivenAString_StringContactWithEdabit" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="93" hits="4" branch="false" />
+                <line number="90" hits="4" branch="false" />
+                <line number="92" hits="4" branch="false" />
+                <line number="94" hits="4" branch="false" />
                 <line number="95" hits="4" branch="false" />
-                <line number="97" hits="4" branch="false" />
-                <line number="98" hits="4" branch="false" />
               </lines>
             </method>
-            <method name="AndTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="And_TwoBooleans_AndCondition" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="104" hits="4" branch="false" />
+                <line number="106" hits="4" branch="false" />
                 <line number="108" hits="4" branch="false" />
-                <line number="110" hits="4" branch="false" />
-                <line number="112" hits="4" branch="false" />
-                <line number="113" hits="4" branch="false" />
+                <line number="109" hits="4" branch="false" />
               </lines>
             </method>
-            <method name="PointsTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="Points_CountOfDoublesAndTriples_PointsTotal" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="117" hits="3" branch="false" />
+                <line number="119" hits="3" branch="false" />
                 <line number="121" hits="3" branch="false" />
-                <line number="123" hits="3" branch="false" />
-                <line number="125" hits="3" branch="false" />
-                <line number="126" hits="3" branch="false" />
+                <line number="122" hits="3" branch="false" />
               </lines>
             </method>
-            <method name="FindPerimeterTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="FindPerimeter_LengthAndWidth_Perimeter" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="130" hits="3" branch="false" />
+                <line number="132" hits="3" branch="false" />
                 <line number="134" hits="3" branch="false" />
-                <line number="136" hits="3" branch="false" />
-                <line number="138" hits="3" branch="false" />
-                <line number="139" hits="3" branch="false" />
+                <line number="135" hits="3" branch="false" />
               </lines>
             </method>
-            <method name="HelloNameTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="HelloName_GivenAName_HelloName" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="144" hits="3" branch="false" />
+                <line number="146" hits="3" branch="false" />
                 <line number="148" hits="3" branch="false" />
-                <line number="150" hits="3" branch="false" />
-                <line number="152" hits="3" branch="false" />
-                <line number="153" hits="3" branch="false" />
+                <line number="149" hits="3" branch="false" />
               </lines>
             </method>
-            <method name="AnimalsTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="Animals_CountOfAnimals_LegsTotal" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="157" hits="3" branch="false" />
+                <line number="159" hits="3" branch="false" />
+                <line number="161" hits="3" branch="false" />
                 <line number="162" hits="3" branch="false" />
-                <line number="164" hits="3" branch="false" />
-                <line number="166" hits="3" branch="false" />
-                <line number="167" hits="3" branch="false" />
               </lines>
             </method>
-            <method name="FootballPointsTest" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="FootballPoints_CountsWinDrawsLosses_TotalPoints" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="176" hits="3" branch="false" />
-                <line number="178" hits="3" branch="false" />
-                <line number="180" hits="3" branch="false" />
-                <line number="181" hits="3" branch="false" />
+                <line number="170" hits="3" branch="false" />
+                <line number="172" hits="3" branch="false" />
+                <line number="174" hits="3" branch="false" />
+                <line number="175" hits="3" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -303,50 +303,50 @@
             <line number="23" hits="4" branch="false" />
             <line number="25" hits="4" branch="false" />
             <line number="26" hits="4" branch="false" />
-            <line number="40" hits="6" branch="false" />
+            <line number="37" hits="6" branch="false" />
+            <line number="39" hits="6" branch="false" />
+            <line number="41" hits="6" branch="false" />
             <line number="42" hits="6" branch="false" />
-            <line number="44" hits="6" branch="false" />
-            <line number="45" hits="6" branch="false" />
-            <line number="53" hits="3" branch="false" />
+            <line number="50" hits="3" branch="false" />
+            <line number="52" hits="3" branch="false" />
+            <line number="54" hits="3" branch="false" />
             <line number="55" hits="3" branch="false" />
-            <line number="57" hits="3" branch="false" />
-            <line number="58" hits="3" branch="false" />
-            <line number="65" hits="2" branch="false" />
+            <line number="62" hits="2" branch="false" />
+            <line number="64" hits="2" branch="false" />
+            <line number="66" hits="2" branch="false" />
             <line number="67" hits="2" branch="false" />
-            <line number="69" hits="2" branch="false" />
-            <line number="70" hits="2" branch="false" />
-            <line number="79" hits="4" branch="false" />
+            <line number="76" hits="4" branch="false" />
+            <line number="78" hits="4" branch="false" />
+            <line number="80" hits="4" branch="false" />
             <line number="81" hits="4" branch="false" />
-            <line number="83" hits="4" branch="false" />
-            <line number="84" hits="4" branch="false" />
-            <line number="93" hits="4" branch="false" />
+            <line number="90" hits="4" branch="false" />
+            <line number="92" hits="4" branch="false" />
+            <line number="94" hits="4" branch="false" />
             <line number="95" hits="4" branch="false" />
-            <line number="97" hits="4" branch="false" />
-            <line number="98" hits="4" branch="false" />
+            <line number="104" hits="4" branch="false" />
+            <line number="106" hits="4" branch="false" />
             <line number="108" hits="4" branch="false" />
-            <line number="110" hits="4" branch="false" />
-            <line number="112" hits="4" branch="false" />
-            <line number="113" hits="4" branch="false" />
+            <line number="109" hits="4" branch="false" />
+            <line number="117" hits="3" branch="false" />
+            <line number="119" hits="3" branch="false" />
             <line number="121" hits="3" branch="false" />
-            <line number="123" hits="3" branch="false" />
-            <line number="125" hits="3" branch="false" />
-            <line number="126" hits="3" branch="false" />
+            <line number="122" hits="3" branch="false" />
+            <line number="130" hits="3" branch="false" />
+            <line number="132" hits="3" branch="false" />
             <line number="134" hits="3" branch="false" />
-            <line number="136" hits="3" branch="false" />
-            <line number="138" hits="3" branch="false" />
-            <line number="139" hits="3" branch="false" />
+            <line number="135" hits="3" branch="false" />
+            <line number="144" hits="3" branch="false" />
+            <line number="146" hits="3" branch="false" />
             <line number="148" hits="3" branch="false" />
-            <line number="150" hits="3" branch="false" />
-            <line number="152" hits="3" branch="false" />
-            <line number="153" hits="3" branch="false" />
+            <line number="149" hits="3" branch="false" />
+            <line number="157" hits="3" branch="false" />
+            <line number="159" hits="3" branch="false" />
+            <line number="161" hits="3" branch="false" />
             <line number="162" hits="3" branch="false" />
-            <line number="164" hits="3" branch="false" />
-            <line number="166" hits="3" branch="false" />
-            <line number="167" hits="3" branch="false" />
-            <line number="176" hits="3" branch="false" />
-            <line number="178" hits="3" branch="false" />
-            <line number="180" hits="3" branch="false" />
-            <line number="181" hits="3" branch="false" />
+            <line number="170" hits="3" branch="false" />
+            <line number="172" hits="3" branch="false" />
+            <line number="174" hits="3" branch="false" />
+            <line number="175" hits="3" branch="false" />
           </lines>
         </class>
       </classes>
