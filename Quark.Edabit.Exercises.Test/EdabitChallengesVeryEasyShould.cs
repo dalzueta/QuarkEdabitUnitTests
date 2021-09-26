@@ -16,7 +16,7 @@ namespace Quark.Edabit.Exercises.Test
         [InlineData(2, 3, 5)]
         [InlineData(-3, 6, 3)]
         [InlineData(3, 7, 10)]
-        public void SumTwoNumbers_GivenTwoNumbers_SumOfBoth(int number1, int number2, double expected)
+        public void SumTwoNumbers_GivenTwoNumbers_SumOfBoth(int number1, int number2, int expected)
         {
             /// Act
             var result = _sut.Sum(number1, number2);
