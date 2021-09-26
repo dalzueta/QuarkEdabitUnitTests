@@ -5933,26 +5933,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DanielAlzueta\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\nkoto_000\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Quark\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\Quark.Edabit.Exercises.Test.csproj",
+      "projectUniqueName": "E:\\GameDev\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\Quark.Edabit.Exercises.Test.csproj",
       "projectName": "Quark.Edabit.Exercises.Test",
-      "projectPath": "C:\\Quark\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\Quark.Edabit.Exercises.Test.csproj",
-      "packagesPath": "C:\\Users\\DanielAlzueta\\.nuget\\packages\\",
-      "outputPath": "C:\\Quark\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\obj\\",
+      "projectPath": "E:\\GameDev\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\Quark.Edabit.Exercises.Test.csproj",
+      "packagesPath": "C:\\Users\\nkoto_000\\.nuget\\packages\\",
+      "outputPath": "E:\\GameDev\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises.Test\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DanielAlzueta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\nkoto_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5966,8 +5959,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Quark\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises.csproj": {
-              "projectPath": "C:\\Quark\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises.csproj"
+            "E:\\GameDev\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises.csproj": {
+              "projectPath": "E:\\GameDev\\QuarkEdabitUnitTests\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises\\Quark.Edabit.Exercises.csproj"
             }
           }
         }
@@ -6018,7 +6011,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

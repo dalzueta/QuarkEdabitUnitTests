@@ -16,27 +16,128 @@ namespace Quark.Edabit.Exercises.Test
         [InlineData(2, 3, 5)]
         [InlineData(-3, 6, 3)]
         [InlineData(3, 7, 10)]
-        [InlineData(0.3, 0.7, 1)]
-        public void SumTwoNumbers_GivenTwoNumbers_SumOfBoth(double number1, double number2, double expected)
+        public void SumTwoNumbers_GivenTwoNumbers_SumOfBoth(int number1, int number2, double expected)
         {
             /// Act
-            var result = _sut.SubTwoNumbers(number1, number2);
+            var result = _sut.Sum(number1, number2);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Convert minutes into seconds 
+        [Theory]
+        [InlineData(5, 300)]
+        [InlineData(3, 180)]
+        [InlineData(2, 120)]
+        public void HowManySeconds_Minutes_Seconds(int minutes, int expected)
+        {
+            /// Act
+            var result = _sut.ConvertMinutesToSeconds(minutes);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Return the next number from the integer passed 
+        [Theory]
+        [InlineData(0, 1)]
+        [InlineData(9, 10)]
+        [InlineData(-3, -2)]
+        public void ReturnNextInteger_Number_NextNumber(int number, int expected)
+        {
+            /// Act
+            var result = _sut.AddOne(number);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // PowerCalculator 
+        [Theory]
+        [InlineData(230, 10, 2300)]
+        [InlineData(110, 3, 330)]
+        [InlineData(480, 20, 9600)]
+        public void CalculateElectricalPower_VoltageAndCurrent_CalculatedPower(int voltage, int current, int expected)
+        {
+            /// Act
+            var result = _sut.CalculateElectricalPower(voltage, current);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Convert age to days
+        [Theory]
+        [InlineData(65, 23725)]
+        [InlineData(0, 0)]
+        [InlineData(20, 7300)]
+        public void CalculateAgeInDays_Years_Days(int age, int expected)
+        {
+            /// Act
+            var result = _sut.CalcAge(age);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Area of a Triangle 
+        [Theory]
+        [InlineData(3, 2, 3)]
+        [InlineData(7, 4, 14)]
+        [InlineData(10, 10, 50)]
+        public void CalculateTriangleArea_BaseAndHeight_Area(int tBase, int area, int expected)
+        {
+            /// Act
+            var result = _sut.TriArea(tBase, area);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Return the remainder from two numbers
+        [Theory]
+        [InlineData(1, 3, 1)]
+        [InlineData(3, 4, 3)]
+        [InlineData(-9, 45, -9)]
+        [InlineData(5, 5, 0)]
+        public void GetRemainder_Numbers_Remainder(int number1, int number2, int expected)
+        {
+            /// Act
+            var result = _sut.Remainder(number1, number2);
             /// Assert
             Assert.Equal(expected, result);
         }
 
         //LessThanOrEqualToZero
         [Theory]
-        [InlineData(2, false)]
-        [InlineData(3.5, false)]
-        [InlineData(-1, true)]
+        [InlineData(5, false)]
         [InlineData(0, true)]
-        [InlineData(0.001, false)]
-        [InlineData(100, false)]
-        public void LessThanOrEqualToZero_NumberLessOrEqualToZero_True(double number, bool expected)
+        [InlineData(-2, true)]
+        public void LessThanOrEqualToZero_NumberLessOrEqualToZero_True(int number, bool expected)
         {
             /// Act
             var result = _sut.LessThanOrEqualToZero(number);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Less than 100?
+        [Theory]
+        [InlineData(22, 15, true)]
+        [InlineData(83, 34, false)]
+        [InlineData(3, 77, true)]
+        public void LessThan100_NumbersToSum_TrueOrFalse(int number1, int number2, bool expected)
+        {
+            /// Act
+            var result = _sut.LessThan100(number1, number2);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Are the numbers equal?
+        [Theory]
+        [InlineData(5, 6, false)]
+        [InlineData(1, 1, true)]
+        [InlineData(36, 35, false)]
+        public void CheckNumbers_NumbersToCheck_TrueOrFalse(int number1, int number2, bool expected)
+        {
+            /// Act
+            var result = _sut.IsEqual(number1, number2);
             /// Assert
             Assert.Equal(expected, result);
         }
@@ -94,7 +195,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
-        // 
+        // Using the "&&" operator
         [Theory]
         [InlineData(true, false, false)]
         [InlineData(true, true, true)]
@@ -108,7 +209,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
-        //  Basketball Points
+        // Basketball Points
         [Theory]
         [InlineData(1, 1, 5)]
         [InlineData(7, 5, 29)]
@@ -121,7 +222,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
-        //  Find the Perimeter of a Rectangle
+        // Find the Perimeter of a Rectangle
         [Theory]
         [InlineData(6, 7, 26)]
         [InlineData(20, 10, 60)]
@@ -134,7 +235,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
-        //   Name Greeting!
+        // Name Greeting!
         [Theory]
         [InlineData("Gerald", "Hello Gerald!")]
         [InlineData("Tiffany", "Hello Tiffany!")]

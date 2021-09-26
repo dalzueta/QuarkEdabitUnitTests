@@ -18,3 +18,12 @@ C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\
 C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.csproj.CoreCompileInputs.cache
 C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.dll
 C:\Quark\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.pdb
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\bin\Debug\netcoreapp3.1\Quark.Edabit.Exercises.deps.json
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\bin\Debug\netcoreapp3.1\Quark.Edabit.Exercises.dll
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\bin\Debug\netcoreapp3.1\Quark.Edabit.Exercises.pdb
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.csproj.AssemblyReference.cache
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.AssemblyInfoInputs.cache
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.AssemblyInfo.cs
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.csproj.CoreCompileInputs.cache
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.dll
+E:\GameDev\QuarkEdabitUnitTests\Quark.Edabit.Exercises\Quark.Edabit.Exercises\obj\Debug\netcoreapp3.1\Quark.Edabit.Exercises.pdb
