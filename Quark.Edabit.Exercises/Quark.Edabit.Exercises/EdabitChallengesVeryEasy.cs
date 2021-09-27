@@ -4,16 +4,59 @@ namespace Quark.Edabit.Exercises
 {
     public class EdabitChallengesVeryEasy
     {
-        // Return the Sum of Two Numbers 
-        public double SubTwoNumbers(double number1, double number2)
+        //Return the sum of two numbers
+        public int Sum(int a, int b)
         {
-            return number1 + number2;
+            return a + b;
+        }
+        //Convert minutes into seconds
+        public int ConvertMinutesToSeconds(int minutes)
+        {
+            return minutes * 60;
+        }
+        //Return the next number from the int passed
+        public int AddOne(int a)
+        {
+            return a + 1;
+        }
+        //PowerCalculator
+        public int CalculateElectricalPower(int voltage, int current)
+        {
+            return voltage * current;
+        }
+        //Convert Age to Days
+        public int CalcAge(int age)
+        {
+            return age * 365;
+        }
+        //Area of a Triangle
+        public int TriArea(int tBase, int height)
+        {
+            return (tBase * height) / 2;
         }
 
-        // Is the Number Less than or Equal to Zero?
-        public bool LessThanOrEqualToZero(double a)
+        //Return the remainder from two numbers
+        public int Remainder(int a, int b)
+        {
+            return a % b;
+        }
+
+        //Is the number less than or equal to zero?
+        public bool LessThanOrEqualToZero(int a)
         {
             return a <= 0;
+        }
+
+        //Less than 100
+        public bool LessThan100(int a, int b)
+        {
+            return a + b < 100;
+        }
+
+        //Are the numbers equal?
+        public bool IsEqual(int a, int b)
+        {
+            return a == b;
         }
 
         // Return Something to Me!
