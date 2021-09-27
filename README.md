@@ -14,7 +14,7 @@ Project to practice the Unit tests coding. The objective of this project is to a
 
 ## Prerequisites
 
-In this project we use the followeing tools:
+In this project we use the following tools:
 
 - Visual Studio 2019
 - XUnit Framework
