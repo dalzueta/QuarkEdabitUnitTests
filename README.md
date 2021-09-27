@@ -1,3 +1,5 @@
+[![Quark CI](https://github.com/dalzueta/QuarkEdabitUnitTests/actions/workflows/ci.yml/badge.svg)](https://github.com/dalzueta/QuarkEdabitUnitTests/actions/workflows/ci.yml)
+
 # Quark Edabit Exercises
 
 Project to practice the Unit tests coding. The objective of this project is to apply the TDD practice.
@@ -88,6 +90,10 @@ solution
 All test pass
 
 ![gitlab_conf](docs/imgs/testspass.png)
+
+## Exercises Document
+
+[Here](https://docs.google.com/document/d/1ruFF_jxH6zgVDR2Ltt4GtoVK9Wy6iSjMW7EAZqBKvCA/edit#) you can found the Exercises Document.
 
 ## Name Convention
 
