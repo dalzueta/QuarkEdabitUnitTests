@@ -275,9 +275,70 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Buggy Code (Part 4)
+        [Theory]
+        [InlineData("Matt", "Hello, Matt!")]
+        [InlineData("Helen", "Hello, Helen!")]
+        [InlineData("Mubashir", "Hello, my Love!")]
 
+        public void Greeting_Name_GreetingsName(string name, string expected)
+        {
+            /// Act
+            var result = _sut.Greeting(name);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
 
+        // Inches to feet
+        [Theory]
+        [InlineData(324, 27)]
+        [InlineData(12, 1)]
+        [InlineData(36, 3)]
+        public void InchesToFeet_Inches_Feet(float inches, float expected)
+        {
+            /// Act
+            var result = _sut.InchesToFeet(inches);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
 
+        // Sum of Polygon Angles
+        [Theory]
+        [InlineData(3, 180)]
+        [InlineData(4, 360)]
+        [InlineData(6, 720)]
+        public void SumPolygon_Sides_SumOfAngles(int sides, int expected)
+        {
+            /// Act
+            var result = _sut.SumPolygon(sides);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
 
+        // Check if an integer is divisible by five
+        [Theory]
+        [InlineData(5, true)]
+        [InlineData(-55, true)]
+        [InlineData(37, false)]
+        public void DivisibleByFive_Number_TrueOrFalse(int number, bool expected)
+        {
+            /// Act
+            var result = _sut.DivisibleByFive(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Correct the Mistakes
+        [Theory]
+        [InlineData(5, 25)]
+        [InlineData(9, 81)]
+        [InlineData(100, 10000)]
+        public void Squared_Number_SquaredNumber(int number, int expected)
+        {
+            /// Act
+            var result = _sut.Squared(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -110,5 +110,34 @@ namespace Quark.Edabit.Exercises
         {
             return wins * 3 + draws * 1 + losses * 0;
         }
+
+        public string Greeting(string name)
+        {
+            if (name == "Mubashir")
+            {
+                return "Hello, my Love!";
+            }
+
+            return "Hello, " + name + "!";
+        }
+
+        public float InchesToFeet(float inches)
+        {
+            return inches / 12;
+        }
+
+        public int SumPolygon(int sides)
+        {
+            return (sides - 2) * 180;
+        }
+
+        public bool DivisibleByFive(int number)
+        {
+            return (number % 5 == 0);
+        }
+        public int Squared(int a)
+        {
+            return a * a;
+        }
     }
 }
