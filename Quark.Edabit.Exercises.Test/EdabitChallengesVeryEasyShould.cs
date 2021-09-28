@@ -340,5 +340,71 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+
+
+        // Flip the Integer boolean
+        [Theory]
+        [InlineData(1, 0)]
+        [InlineData(0, 1)]
+        public void FlipIntBool_IntBoolean_OppositeIntBoolean(int number, int expected)
+        {
+            /// Act
+            var result = _sut.FlipIntBool(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        //  Divides evenly
+        [Theory]
+        [InlineData(98, 7, true)]
+        [InlineData(85, 4, false)]
+        public void dividesEvenly_TwoIntegers_IsOneDivisibleEvenly(int number1, int number2, bool expected)
+        {
+            /// Act
+            var result = _sut.DividesEvenly(number1, number2);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        //  Frames per second
+        [Theory]
+        [InlineData(1, 1, 60)]
+        [InlineData(10, 1, 600)]
+        [InlineData(10, 25, 15000)]
+        public void Frames_FpsAndMinutes_FpsByMinutes(int minutes, int fps, int expected)
+        {
+            /// Act
+            var result = _sut.Frames(minutes, fps);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        //  Profitable Gamble
+        [Theory]
+        [InlineData(0.2, 50, 9, true)]
+        [InlineData(0.9, 1, 2, false)]
+        [InlineData(0.9, 3, 2, true)]
+        public void ProfitableGamble_ProbPrizeAndPay_IsProfitable(double prob, double prize, double pay, bool expected)
+        {
+            /// Act
+            var result = _sut.ProfitableGamble(prob, prize, pay);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        //  Multiple of 100 
+        [Theory]
+        [InlineData(1, false)]
+        [InlineData(1000, true)]
+        [InlineData(100, true)]
+        public void Divisible_Number_Bool(int number, bool expected)
+        {
+            /// Act
+            var result = _sut.Divisible(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
     }
 }

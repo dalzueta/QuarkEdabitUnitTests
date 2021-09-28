@@ -139,5 +139,31 @@ namespace Quark.Edabit.Exercises
         {
             return a * a;
         }
+
+        public int FlipIntBool(int number)
+        {
+            return (number == 1) ? 0 : 1;
+        }
+
+        public bool DividesEvenly(int number1, int number2)
+        {
+            return (number1 % number2 == 0);
+        }
+
+        public int Frames(int minutes, int fps)
+        {
+            return minutes * 60 * fps;
+        }
+
+        public bool ProfitableGamble(double prob, double prize, double pay)
+        {
+            return prob * prize > pay;
+
+        }
+
+        public bool Divisible(int number)
+        {
+            return (number % 100 == 0);
+        }
     }
 }

@@ -95,6 +95,8 @@ All test pass
 
 [Here](https://docs.google.com/document/d/1ruFF_jxH6zgVDR2Ltt4GtoVK9Wy6iSjMW7EAZqBKvCA/edit#) you can found the Exercises Document.
 
+[Here](https://edabit.com/challenges/csharp) Exercises
+
 ## Name Convention
 
 ### Class Names
