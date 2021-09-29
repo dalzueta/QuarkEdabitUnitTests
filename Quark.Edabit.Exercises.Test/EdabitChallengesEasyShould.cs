@@ -11,6 +11,7 @@ namespace Quark.Edabit.Exercises.Test
             _sut = new EdabitChallengesEasy();
         }
 
+        // To the power of _____
         [Theory]
         [InlineData(5, 5, 3125)]
         [InlineData(10, 10, 10000000000)]
@@ -23,6 +24,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Multiply by Length
         [Theory]
         [InlineData(new int[] { 2, 3, 1, 0 }, new int[] { 8, 12, 4, 0 })]
         [InlineData(new int[] { 4, 1, 1 }, new int[] { 12, 3, 3 })]
@@ -36,6 +38,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Hamming distance
         [Theory]
         [InlineData("abcde", "bcdef", 5)]
         [InlineData("abcde", "abcde", 0)]
@@ -48,6 +51,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Shuffle the name
         [Theory]
         [InlineData("Donald Trump", "Trump Donald")]
         [InlineData("Rosie O'Donnell", "O'Donnell Rosie")]
@@ -60,6 +64,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Smaller string number
         [Theory]
         [InlineData("21", "44", "21")]
         [InlineData("1500", "1", "1")]

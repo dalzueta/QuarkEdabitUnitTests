@@ -42,8 +42,6 @@ namespace Quark.Edabit.Exercises
             string[] splittedName = firstAndLastName.Split(' ');
 
             return splittedName[1] + " " + splittedName[0];
-
-
         }
 
         public string SmallerNum(string firstNumber, string secondNumber)
