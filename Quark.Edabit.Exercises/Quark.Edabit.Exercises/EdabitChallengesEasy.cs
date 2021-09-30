@@ -48,5 +48,50 @@ namespace Quark.Edabit.Exercises
         {
             return (Int32.Parse(firstNumber) < Int32.Parse(secondNumber)) ? firstNumber : secondNumber;
         }
+
+        public bool SameCase(string word)
+        {
+            return (word == word.ToLower() || word == word.ToUpper());
+        }
+
+        public int CountDs(string phrase)
+        {
+            int dsCount = 0;
+            phrase = phrase.ToLower();
+
+            foreach(char letter in phrase)
+            {
+                if(letter == 'd') dsCount++;
+            }
+
+            return dsCount;
+        }
+
+        public string NSidedShape(int sides)
+        {
+            string[] shapes = {"circle", "semi-circle", "triangle", "Square", "pentagon",
+                               "hexagon","heptagon", "octagon", "nonagon", "decagon"};
+
+            return shapes[sides - 1];
+        }
+
+        public int CountClaps(string claps)
+        {
+            string[] clapArray = claps.Split('C');
+
+            return clapArray.Length - 1;
+        }
+
+        public string LongBurp(int numberOfRs)
+        {
+            string burp = "Bu";
+            for(int i=0; i < numberOfRs; i++)
+            {
+                burp += "r";
+            }
+            burp += "p";
+
+            return burp;
+        }
     }
 }

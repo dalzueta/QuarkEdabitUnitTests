@@ -76,5 +76,77 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+        // Check if the same case
+        [Theory]
+        [InlineData("hello", true)]
+        [InlineData("HELLO", true)]
+        [InlineData("Hello", false)]
+        [InlineData("ketcHUp", false)]
+
+        public void SameCase_String_CheckIfContainsOnlyUpperOrLowercase(string word, bool expected)
+        {
+            /// Act
+            var result = _sut.SameCase(word);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // How many D's Are there
+        [Theory]
+        [InlineData("My friend Dylan got distracted in school.", 4)]
+        [InlineData("Debris was scattered all over the yard", 3)]
+        [InlineData("The rodents hibernated in their den.", 3)]
+
+        public void CountDs_String_DsCount(string phrase, int expected)
+        {
+            /// Act
+            var result = _sut.CountDs(phrase);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Shapes with N sides
+        [Theory]
+        [InlineData(3, "triangle")]
+        [InlineData(1, "circle")]
+        [InlineData(9, "nonagon")]
+
+        public void NSidedShape_Sides_Shape(int sides, string expected)
+        {
+            /// Act
+            var result = _sut.NSidedShape(sides);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Raucous Applause
+        [Theory]
+        [InlineData("ClaClaClaClap!", 4)]
+        [InlineData("ClClClaClaClaClap!", 6)]
+        [InlineData("CCClaClClap!Clap!ClClClap!", 9)]
+
+        public void CountClaps_String_NumberOfClaps(string claps, int expected)
+        {
+            /// Act
+            var result = _sut.CountClaps(claps);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Burrrrrrrp
+        [Theory]
+        [InlineData(3, "Burrrp")]
+        [InlineData(5, "Burrrrrp")]
+        [InlineData(9, "Burrrrrrrrrp")]
+
+        public void LongBurp_NumberOfRs_NewBurp(int numberOfRs, string expected)
+        {
+            /// Act
+            var result = _sut.LongBurp(numberOfRs);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
     }
 }
