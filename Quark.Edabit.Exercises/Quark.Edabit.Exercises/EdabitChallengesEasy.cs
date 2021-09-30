@@ -93,5 +93,60 @@ namespace Quark.Edabit.Exercises
 
             return burp;
         }
+
+        public string RemoveFirstLast(string phrase)
+        {
+            if (phrase.Length <= 2) return phrase;
+            var sb = new System.Text.StringBuilder();
+            sb.Append(phrase);
+            sb.Remove(0, 1);
+            sb.Remove(sb.Length - 1, 1);
+            return sb.ToString();
+        }
+
+        public string FormatDate(string date)
+        {
+            string[] dateParts = date.Split('/');
+
+            return dateParts[2] + dateParts[1] + dateParts[0];
+        }
+
+        public string FizzBuzz(int number)
+        {
+
+            if(number % 3 == 0)
+            {
+                if(number % 5 == 0)
+                {
+                    return "FizzBuzz";
+                }
+                return "Fizz";
+            }else if (number % 5 == 0)
+            {
+                return "Buzz";
+            }
+
+            return number.ToString();
+        }
+
+        public string Repetition(string phrase, int times)
+        {
+            if(times > 1)
+            {
+                phrase += Repetition(phrase, times - 1);
+            }
+            return phrase;
+        }
+
+        public string DoubleChar(string phrase)
+        {
+            string newPhrase = "";
+            foreach(char c in phrase)
+            {
+                string _c = c.ToString();
+                newPhrase += _c + _c;
+            }
+            return newPhrase;
+        }
     }
 }

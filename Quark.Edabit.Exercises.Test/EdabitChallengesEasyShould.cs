@@ -148,5 +148,67 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData("hello", "ell")]
+        [InlineData("maybe", "ayb")]
+        [InlineData("benefit", "enefi")]
+        [InlineData("a", "a")]
+        public void RemoveFirstLast_String_CutString(string phrase, string expected)
+        {
+            /// Act
+            var result = _sut.RemoveFirstLast(phrase);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("11/12/2019", "20191211")]
+        [InlineData("12/31/2019", "20193112")]
+        [InlineData("01/15/2019", "20191501")]
+        public void FormatDate_Date_FormatedDate(string date, string expected)
+        {
+            /// Act
+            var result = _sut.FormatDate(date);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(3, "Fizz")]
+        [InlineData(5, "Buzz")]
+        [InlineData(15, "FizzBuzz")]
+        [InlineData(4, "4")]
+        public void FizzBuzz_Number_FizzBuzzResult(int number, string expected)
+        {
+            /// Act
+            var result = _sut.FizzBuzz(number);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("ab", 3, "ababab")]
+        [InlineData("kiwi", 1, "kiwi")]
+        [InlineData("cherry", 2, "cherrycherry")]
+        public void Repetition_StringAndNumber_RepeatedString(string phrase, int times, string expected)
+        {
+            /// Act
+            var result = _sut.Repetition(phrase, times);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("String", "SSttrriinngg")]
+        [InlineData("Hello World!", "HHeelllloo  WWoorrlldd!!")]
+        [InlineData("1234!_ ", "11223344!!__  ")]
+        public void DoubleChar_String_RepeteadString(string phrase, string expected)
+        {
+            /// Act
+            var result = _sut.DoubleChar(phrase);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
     }
 }
