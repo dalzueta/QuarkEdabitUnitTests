@@ -148,6 +148,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Remove the first and last characters
         [Theory]
         [InlineData("hello", "ell")]
         [InlineData("maybe", "ayb")]
@@ -161,6 +162,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Date format
         [Theory]
         [InlineData("11/12/2019", "20191211")]
         [InlineData("12/31/2019", "20193112")]
@@ -173,6 +175,8 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+
+        // FizzBuzz interview question
         [Theory]
         [InlineData(3, "Fizz")]
         [InlineData(5, "Buzz")]
@@ -186,6 +190,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Recursion to repeat a string N number of times 
         [Theory]
         [InlineData("ab", 3, "ababab")]
         [InlineData("kiwi", 1, "kiwi")]
@@ -198,6 +203,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Repeating Letters
         [Theory]
         [InlineData("String", "SSttrriinngg")]
         [InlineData("Hello World!", "HHeelllloo  WWoorrlldd!!")]
