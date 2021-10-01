@@ -425,7 +425,7 @@ namespace Quark.Edabit.Exercises.Test
         [Theory]
         [InlineData(1, 0)]
         [InlineData(2, 2)]
-        [InlineData(100, 198)] 
+        [InlineData(100, 198)]
         public void Nth_Even_Number(int arg, int expected)
         {
             /// Act
@@ -438,8 +438,8 @@ namespace Quark.Edabit.Exercises.Test
         [Theory]
         [InlineData(4, -4)]
         [InlineData(15, -15)]
-        [InlineData(-4, -4)] 
-        [InlineData(0, 0)] 
+        [InlineData(-4, -4)]
+        [InlineData(0, 0)]
         public void Negative_Number(int arg, int expected)
         {
             /// Act
@@ -485,6 +485,60 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+        // Buggy Code Part 5
+        [Theory]
+        [InlineData(1, new int[] { 1 })]
+        [InlineData(3, new int[] { 1 , 2, 3 })]
+        [InlineData(6, new int[] { 1 , 2, 3, 4 , 5, 6 })]
+        public void Buggy_Code_Part5(int arg, int[] expected)
+        {
+            /// Act
+            Array result = _sut.Buggy_Code_Part5(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Concatenate
+        [Theory]
+        [InlineData("First", "Last", "Last, First")]
+        [InlineData("Jhon", "Doe", "Doe, Jhon")]
+        [InlineData("Mary", "Jane", "Jane, Mary")]
+        public void Concatenate_First_And_Last_Name(string first, string last, string expected)
+        {
+            /// Act
+            string result = _sut.Concatenate_First_And_Last_Name(first, last);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Drinks_allowed
+        [Theory]
+        [InlineData(17, true, false)]
+        [InlineData(19, false, true)]
+        [InlineData(30, true, false)]
+        public void Drinks_Allowed(int age, bool breackBarman, bool expected)
+        {
+            /// Act
+            var result = _sut.Drinks_Allowed(age, breackBarman);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // String_Empty
+        [Theory]
+        [InlineData("", true)]
+        [InlineData(" ", false)]
+        [InlineData("a", false)]
+        public void String_Empty(string arg, bool expected)
+        {
+            /// Act
+            var result = _sut.String_Empty(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+
 
 
     }
