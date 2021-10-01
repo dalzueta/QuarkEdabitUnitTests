@@ -77,6 +77,78 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Return the factorial 
+
+        [Theory]
+        [InlineData(3, 6)]
+        [InlineData(5, 120)]
+        [InlineData(12, 479001600)]
+        public void Factorial_Number_FactorialOfNumber(int number, int expected)
+        {
+            /// Act
+            var result = _sut.Factorial(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // How many vowels?
+
+        [Theory]
+        [InlineData("Celebration", 5)]
+        [InlineData("Palm", 1)]
+        [InlineData("Prediction", 4)]
+        public void CountVowels_String_NumberOfVowels(string phrase, int expected)
+        {
+            /// Act
+            var result = _sut.CountVowels(phrase);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Sort numbers in ascending order
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 10, 50, 5 }, new int[] { 1, 2, 5, 10, 50 })]
+        [InlineData(new int[] { 80, 29, 4, -95, -24, 85 }, new int[] {-95, -24, 4, 29, 80, 85})]
+        [InlineData(null, new int[] { })]
+        [InlineData(new int[] { }, new int[] { })]
+
+        public void SortNumsAscending_UnordenedArray_OrdenedArray(int[] array, int[] expected)
+        {
+            /// Act
+            var result = _sut.SortNumsAscending(array);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Check if a string contains only identical characters
+
+        [Theory]
+        [InlineData("aaaaaa", true)]
+        [InlineData("aabaaa", false)]
+        [InlineData("ccccca", false)]
+        public void IsIdentical_String_TrueOrFalse(string phrase, bool expected)
+        {
+            /// Act
+            var result = _sut.IsIdentical(phrase);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // h4ck3r sp34k
+
+        [Theory]
+        [InlineData("javascript is cool", "j4v45cr1pt 15 c00l")]
+        [InlineData("programming is fun", "pr0gr4mm1ng 15 fun")]
+        [InlineData("become a coder", "b3c0m3 4 c0d3r")]
+        public void HackerSpeak_Phrase_ModifiedPhrase(string phrase, string expected)
+        {
+            /// Act
+            var result = _sut.HackerSpeak(phrase);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
         // Check if the same case
         [Theory]
         [InlineData("hello", true)]

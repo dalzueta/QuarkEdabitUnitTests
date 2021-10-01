@@ -49,6 +49,31 @@ namespace Quark.Edabit.Exercises
             return (Int32.Parse(firstNumber) < Int32.Parse(secondNumber)) ? firstNumber : secondNumber;
         }
 
+        public int Factorial(int number)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CountVowels(string phrase)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int[] SortNumsAscending(int[] array)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsIdentical(string phrase)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string HackerSpeak(string phrase)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool SameCase(string word)
         {
             return (word == word.ToLower() || word == word.ToUpper());
