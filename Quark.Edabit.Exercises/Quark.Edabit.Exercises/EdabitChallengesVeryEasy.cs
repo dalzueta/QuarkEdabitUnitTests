@@ -202,5 +202,29 @@ namespace Quark.Edabit.Exercises
         {
             return (int) Math.Pow(arg, 2); 
         }
+        public int[] Buggy_Code_Part5(int arg)
+        {
+            int[] result = new int[arg];
+            for (int i = 0; i < arg; i++)
+            {
+                result[i] = i+1;
+            }
+            return result;
+        }
+
+        public string Concatenate_First_And_Last_Name(string first, string last)
+        {
+            return last + ", " + first;
+        }
+
+        public bool Drinks_Allowed(int age, bool breakBarman)
+        {
+            return age >= 18 && !breakBarman;
+        }
+
+        public bool String_Empty(string arg)
+        {
+            return string.IsNullOrEmpty(arg);
+        }
     }
 }
