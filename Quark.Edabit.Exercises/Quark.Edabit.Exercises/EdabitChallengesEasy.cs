@@ -51,27 +51,71 @@ namespace Quark.Edabit.Exercises
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            if (number > 1) number *= Factorial(number - 1);
+
+            return number;
         }
 
         public int CountVowels(string phrase)
         {
-            throw new NotImplementedException();
+            int vowelsCount = 0;
+            List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
+
+            foreach (char c in phrase)
+            {
+                if (vowels.Contains(c))
+                {
+                    vowelsCount++;
+                }
+            }
+
+            return vowelsCount;
         }
 
         public int[] SortNumsAscending(int[] array)
         {
-            throw new NotImplementedException();
+            if (array == null) array = new int[] { };
+            Array.Sort(array);
+            return array;
         }
 
         public bool IsIdentical(string phrase)
         {
-            throw new NotImplementedException();
+            char pivot = phrase[0];
+
+            foreach (char c in phrase)
+            {
+                if (c != pivot) return false;
+            }
+
+            return true;
         }
 
         public string HackerSpeak(string phrase)
         {
-            throw new NotImplementedException();
+            string translatedString = "";
+            Dictionary<char, int> hackerDict = new Dictionary<char, int> 
+            {
+                {'a', 4 },
+                {'e', 3 },
+                {'i', 1 },
+                {'s', 5 },
+                {'o', 0 }
+            };
+
+            foreach (char c in phrase)
+            {
+                if (hackerDict.ContainsKey(c))
+                {
+                    translatedString += hackerDict[c].ToString();
+                }
+                else
+                {
+                    translatedString += c.ToString();
+                }
+            }
+
+            return translatedString;
         }
 
         public bool SameCase(string word)
