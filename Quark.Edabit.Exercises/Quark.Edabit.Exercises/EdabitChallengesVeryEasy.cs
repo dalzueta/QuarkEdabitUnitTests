@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Text.RegularExpressions;
+using System;
 
 namespace Quark.Edabit.Exercises
 {
@@ -164,6 +167,40 @@ namespace Quark.Edabit.Exercises
         public bool Divisible(int number)
         {
             return (number % 100 == 0);
+        }
+
+        public bool Date_Chrismas_Eve(int month, int date)
+        {
+            return month == 12 && date == 24;
+        }
+
+        public int Nth_Even_Number(int arg)
+        {
+            return (arg + arg) - 2;
+        }
+
+        public int Negative_Number(int arg)
+        {
+            if(arg <= 0) return arg;
+
+            return arg*(-1);
+        }
+
+        public int Methods_ABS(int arg)
+        {
+            if(arg >= 0) return arg;
+
+            return arg*(-1);
+        }
+
+        public double Coffee_Cup(double arg)
+        {
+            return Math.Truncate((arg/6)) + arg; 
+        }
+
+        public int Stack_The_Boxes(int arg)
+        {
+            return (int) Math.Pow(arg, 2); 
         }
     }
 }
