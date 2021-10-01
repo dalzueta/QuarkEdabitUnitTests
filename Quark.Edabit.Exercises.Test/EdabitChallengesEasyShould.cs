@@ -78,7 +78,6 @@ namespace Quark.Edabit.Exercises.Test
         }
 
         // Return the factorial 
-
         [Theory]
         [InlineData(3, 6)]
         [InlineData(5, 120)]
@@ -92,7 +91,6 @@ namespace Quark.Edabit.Exercises.Test
         }
 
         // How many vowels?
-
         [Theory]
         [InlineData("Celebration", 5)]
         [InlineData("Palm", 1)]
@@ -106,13 +104,11 @@ namespace Quark.Edabit.Exercises.Test
         }
 
         // Sort numbers in ascending order
-
         [Theory]
         [InlineData(new int[] { 1, 2, 10, 50, 5 }, new int[] { 1, 2, 5, 10, 50 })]
         [InlineData(new int[] { 80, 29, 4, -95, -24, 85 }, new int[] {-95, -24, 4, 29, 80, 85})]
         [InlineData(null, new int[] { })]
         [InlineData(new int[] { }, new int[] { })]
-
         public void SortNumsAscending_UnordenedArray_OrdenedArray(int[] array, int[] expected)
         {
             /// Act
@@ -122,7 +118,6 @@ namespace Quark.Edabit.Exercises.Test
         }
 
         // Check if a string contains only identical characters
-
         [Theory]
         [InlineData("aaaaaa", true)]
         [InlineData("aabaaa", false)]
@@ -136,7 +131,6 @@ namespace Quark.Edabit.Exercises.Test
         }
 
         // h4ck3r sp34k
-
         [Theory]
         [InlineData("javascript is cool", "j4v45cr1pt 15 c00l")]
         [InlineData("programming is fun", "pr0gr4mm1ng 15 fun")]
