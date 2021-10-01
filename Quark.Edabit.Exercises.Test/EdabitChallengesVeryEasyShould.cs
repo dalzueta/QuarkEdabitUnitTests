@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace Quark.Edabit.Exercises.Test
@@ -405,6 +406,86 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+        // Verify date Chrismas Eve
+        [Theory]
+        [InlineData(2013, 12, 24, true)]
+        [InlineData(2013, 0, 23, false)]
+        [InlineData(3000, 12, 24, true)]
+        public void Date_Chrismas_Eve(
+            int year, int month, int date, bool expected)
+        {
+            /// Act
+            var result = _sut.Date_Chrismas_Eve(month, date);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Fibonachi 
+        [Theory]
+        [InlineData(1, 0)]
+        [InlineData(2, 2)]
+        [InlineData(100, 198)] 
+        public void Nth_Even_Number(int arg, int expected)
+        {
+            /// Act
+            var result = _sut.Nth_Even_Number(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Negative Number
+        [Theory]
+        [InlineData(4, -4)]
+        [InlineData(15, -15)]
+        [InlineData(-4, -4)] 
+        [InlineData(0, 0)] 
+        public void Negative_Number(int arg, int expected)
+        {
+            /// Act
+            var result = _sut.Negative_Number(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Methods ABS
+        [Theory]
+        [InlineData(-3, 3)]
+        [InlineData(250, 250)]
+        public void Methods_ABS(int arg, int expected)
+        {
+            /// Act
+            var result = _sut.Methods_ABS(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Coffee Cup
+        [Theory]
+        [InlineData(6, 7)]
+        [InlineData(12, 14)]
+        [InlineData(213, 248)]
+        public void Coffee_Cup(double arg, double expected)
+        {
+            /// Act
+            double result = _sut.Coffee_Cup(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Stack the boxes
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 4)]
+        [InlineData(0, 0)]
+        public void Stack_The_Boxes(int arg, int expected)
+        {
+            /// Act
+            int result = _sut.Stack_The_Boxes(arg);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
 
     }
 }
