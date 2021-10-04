@@ -106,7 +106,7 @@ namespace Quark.Edabit.Exercises.Test
         // Sort numbers in ascending order
         [Theory]
         [InlineData(new int[] { 1, 2, 10, 50, 5 }, new int[] { 1, 2, 5, 10, 50 })]
-        [InlineData(new int[] { 80, 29, 4, -95, -24, 85 }, new int[] {-95, -24, 4, 29, 80, 85})]
+        [InlineData(new int[] { 80, 29, 4, -95, -24, 85 }, new int[] { -95, -24, 4, 29, 80, 85 })]
         [InlineData(null, new int[] { })]
         [InlineData(new int[] { }, new int[] { })]
         public void SortNumsAscending_UnordenedArray_OrdenedArray(int[] array, int[] expected)
@@ -278,6 +278,71 @@ namespace Quark.Edabit.Exercises.Test
         {
             /// Act
             var result = _sut.DoubleChar(phrase);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        // Hashes and Pluses
+        [Theory]
+        [InlineData("###+", new int[] { 3, 1 })]
+        [InlineData("##+++#", new int[] { 3, 3 })]
+        [InlineData("#+++#+#++#", new int[] { 4, 6 })]
+        [InlineData("", new int[] { 0, 0 })]
+        public void HashPlusCount_String_HashesPlusesCount(string str, int[] expected)
+        {
+            /// Act
+            var result = _sut.HashPlusCount(str);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, "(123) 456-7890")]
+        [InlineData(new int[] { 5, 1, 9, 5, 5, 5, 4, 4, 6, 8 }, "(519) 555-4468")]
+        [InlineData(new int[] { 3, 4, 5, 5, 0, 1, 2, 5, 2, 7 }, "(345) 501-2527")]
+        public void FormatPhoneNumber_intArray_FormatedPhoneNumber(int[] numbers, string expected)
+        {
+            /// Act
+            var result = _sut.FormatPhoneNumber(numbers);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("mice", 5, "mmmmmiiiiiccccceeeee")]
+        [InlineData("hello", 3, "hhheeellllllooo")]
+        [InlineData("stop", 1, "stop")]
+
+        public void Repeat_StringAndCount_RepeatedCharacters(string str, int count, string expected)
+        {
+            /// Act
+            var result = _sut.Repeat(str, count);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("space", "s p a c e")]
+        [InlineData("far out", "f a r   o u t")]
+        [InlineData("elongated musk", "e l o n g a t e d   m u s k")]
+
+        public void SpaceMeOut_String_SpacedString(string str, string expected)
+        {
+            /// Act
+            var result = _sut.SpaceMeOut(str);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3 }, 2.55f)]
+        [InlineData(new int[] { 2, 3, 2, 3 }, 2.50f)]
+        [InlineData(new int[] { 3, 3, 3, 3, 3 }, 3.00f)]
+
+        public void Mean_IntArray_Average(int[] numbers, float expected)
+        {
+            /// Act
+            var result = _sut.Mean(numbers);
             /// Assert
             Assert.Equal(expected, result);
         }

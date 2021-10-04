@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Quark.Edabit.Exercises
@@ -94,7 +95,7 @@ namespace Quark.Edabit.Exercises
         public string HackerSpeak(string phrase)
         {
             string translatedString = "";
-            Dictionary<char, int> hackerDict = new Dictionary<char, int> 
+            Dictionary<char, int> hackerDict = new Dictionary<char, int>
             {
                 {'a', 4 },
                 {'e', 3 },
@@ -128,9 +129,9 @@ namespace Quark.Edabit.Exercises
             int dsCount = 0;
             phrase = phrase.ToLower();
 
-            foreach(char letter in phrase)
+            foreach (char letter in phrase)
             {
-                if(letter == 'd') dsCount++;
+                if (letter == 'd') dsCount++;
             }
 
             return dsCount;
@@ -154,7 +155,7 @@ namespace Quark.Edabit.Exercises
         public string LongBurp(int numberOfRs)
         {
             string burp = "Bu";
-            for(int i=0; i < numberOfRs; i++)
+            for (int i = 0; i < numberOfRs; i++)
             {
                 burp += "r";
             }
@@ -183,14 +184,15 @@ namespace Quark.Edabit.Exercises
         public string FizzBuzz(int number)
         {
 
-            if(number % 3 == 0)
+            if (number % 3 == 0)
             {
-                if(number % 5 == 0)
+                if (number % 5 == 0)
                 {
                     return "FizzBuzz";
                 }
                 return "Fizz";
-            }else if (number % 5 == 0)
+            }
+            else if (number % 5 == 0)
             {
                 return "Buzz";
             }
@@ -200,7 +202,7 @@ namespace Quark.Edabit.Exercises
 
         public string Repetition(string phrase, int times)
         {
-            if(times > 1)
+            if (times > 1)
             {
                 phrase += Repetition(phrase, times - 1);
             }
@@ -210,12 +212,73 @@ namespace Quark.Edabit.Exercises
         public string DoubleChar(string phrase)
         {
             string newPhrase = "";
-            foreach(char c in phrase)
+            foreach (char c in phrase)
             {
                 string _c = c.ToString();
                 newPhrase += _c + _c;
             }
             return newPhrase;
+        }
+
+        public int[] HashPlusCount(string str)
+        {
+            int[] result = new int[2];
+
+            char[] chars = str.ToCharArray();
+
+            str.ToList().ForEach(
+                x =>
+                {
+                    if (x == '#')
+                    {
+                        ++result[0];
+                    }
+                    else
+                    {
+                        ++result[1];
+                    }
+                }
+            );
+
+            return result;
+        }
+
+        public string FormatPhoneNumber(int[] numbers)
+        {
+            return $"({numbers[0]}{numbers[1]}{numbers[2]}) {numbers[3]}{numbers[4]}{numbers[5]}-{numbers[6]}{numbers[7]}{numbers[8]}{numbers[9]}";
+        }
+
+        public object Repeat(string str, int count)
+        {
+            string result = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                result += new String(str[i], count);
+            }
+
+            return result;
+        }
+
+        public object SpaceMeOut(string str)
+        {
+            string result = str[0].ToString();
+
+            for (int i = 1; i < str.Length; i++)
+            {
+                result += " " + str[i];
+            }
+
+            return result;
+
+        }
+
+        public float Mean(int[] numbers)
+        {
+            float avg = (float)Queryable.Average(numbers.AsQueryable());
+            string a = avg.ToString("f2");
+
+            return float.Parse(a);
         }
     }
 }
