@@ -347,5 +347,95 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData("seas", "onal", "Seasonal")]
+        [InlineData("comp", "lete", "Complete")]
+        [InlineData("lang", "uage", "Language")]
+
+        public void GetWord_TwoString_UnifiedString(string str1, string str2, string expected)
+        {
+            /// Act
+            var result = _sut.GetWord(str1, str2);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new string[] { "Tomato", "Potato", "Pair" }, new string[] { "Pair" })]
+        [InlineData(new string[] { "Kangaroo", "Bear", "Fox" }, new string[] { "Bear" })]
+        [InlineData(new string[] { "Ryan", "Kieran", "Jason", "Matt" }, new string[] { "Ryan", "Matt" })]
+
+        public void IsFourLetters_StringArray_StringArray(string[] str, string[] expected)
+        {
+            /// Act
+            var result = _sut.IsFourLetters(str);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        //Create a function that takes a string, checks if it has the same number of x's and o's and returns either true or false.
+
+        //Return a boolean value(true or false).
+        //Return true if the amount of x's and o's are the same.
+        //Return false if they aren't the same amount.
+        //The string can contain any character.
+        //When "x" and "o" are not in the string, return true.
+        //Examples
+
+
+        //XO("zzoo") ➞ false
+
+        [Theory]
+        [InlineData("ooxx", true)]
+        [InlineData("xooxx", false)]
+        [InlineData("ooxXm", true)]
+        [InlineData("zpzpzpp", true)]
+        [InlineData("zzoo", false)]
+        public void XO_String_Boolean(string str, bool expected)
+        {
+            /// Act
+            var result = _sut.XO(str);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("hello", "ehllo")]
+        [InlineData("edabit", "abdeit")]
+        [InlineData("hacker", "acehkr")]
+        [InlineData("geek", "eegk")]
+        [InlineData("javascript", "aacijprstv")]
+        public void AlphabetSoup_String_String(string str, string expected)
+        {
+            /// Act
+            var result = _sut.AlphabetSoup(str);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(11, 380.132711084365)]
+        public void CircleGetArea_Circle_Float(double radius, double expected)
+        {
+            // Arrange
+            Circle circle = new Circle(radius);
+            /// Act
+            var result = circle.GetArea();
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(4.44, 27.897342763877365)]
+        public void CircleGetPerimeter_Circle_Float(double radius, double expected)
+        {
+            // Arrange
+            Circle circle = new Circle(radius);
+            /// Act
+            var result = circle.GetPerimeter();
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
     }
 }

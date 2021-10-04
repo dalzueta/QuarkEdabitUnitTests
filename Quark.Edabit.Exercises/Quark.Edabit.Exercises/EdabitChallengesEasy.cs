@@ -280,5 +280,56 @@ namespace Quark.Edabit.Exercises
 
             return float.Parse(a);
         }
+
+        public string GetWord(string str1, string str2)
+        {
+            StringBuilder result = new StringBuilder(str1 + str2);
+
+            result[0] = result[0].ToString().ToUpper()[0];
+
+            return result.ToString();
+        }
+
+        public string[] IsFourLetters(string[] str)
+        {
+            List<string> result = new List<string>();
+
+            str.ToList<string>().ForEach(_str =>
+            {
+                if (_str.Length == 4) result.Add(_str);
+            });
+
+            return result.ToArray<string>();
+        }
+
+        public bool XO(string str)
+        {
+            str = str.ToLower();
+            int currentXAmount = 0;
+            int currentOAmount = 0;
+            str.ToList().ForEach( c =>
+            {
+                if (c == 'x') currentXAmount++;
+                if (c == 'o') currentOAmount++;
+            });
+
+            return (currentXAmount == currentOAmount) ? true : false;
+        }
+
+        public string AlphabetSoup(string str)
+        {
+            char[] charX = str.ToCharArray();
+
+            StringBuilder result = new StringBuilder();
+
+            Array.Sort(charX);
+
+            charX.ToList().ForEach(c =>
+            {
+                result.Append(c);
+            });
+
+            return result.ToString();
+        }
     }
 }
