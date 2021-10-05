@@ -437,5 +437,88 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData(5, 120)]
+        [InlineData(3, 6)]
+        [InlineData(2, 2)]
+        public void Algorithms1_IntroductionToRecursion(int num, int expected)
+        {
+            /// Act
+            var result = _sut.Algorithms1_IntroductionToRecursion(num);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("apple", "banana", "azure", true)]
+        [InlineData("monk", "monument", "monkey", true)]
+        [InlineData("bookend", "boolean", "boost", false)]
+        public void Between_Words(string first, string last, string word, bool expected)
+        {
+            /// Act
+            var result = _sut.Between_Words(first, last, word);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("mom", true)]
+        [InlineData("scary", false)]
+        [InlineData("reviver", true)]
+        [InlineData("stressed", false)]
+        public void Is_Palindrome_Word(string word, bool expected)
+        {
+            /// Act
+            var result = _sut.Is_Palindrome_Word(word);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("the aardvark", '#', "th# ##rdv#rk")]
+        [InlineData("minnie mouse", '?', "m?nn?? m??s?")]
+        [InlineData("shakespeare", '*', "sh*k*sp**r*")]
+        public void Vowel_Replacer(string word, char character, string expected)
+        {
+            /// Act
+            var result = _sut.Vowel_Replacer(word, character);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new object[] { 1, 0, 1, 0 }, new object[] { 1, 0 })]
+        [InlineData(new object[] { "The", "big", "cat" }, new object[] { "The", "big", "cat" })]
+        [InlineData(new object[] { "John", "Taylor", "John" }, new object[] {"John", "Taylor"})]
+        public void Remove_Duplicates_From_Array(object[] word, object[] expected)
+        {
+            /// Act
+            var result = _sut.Remove_Duplicates_From_Array(word);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+        //Create a function that takes three integer arguments(a, b, c) and returns the amount of integers which are of equal value.
+
+        //Examples
+        //Equal(3, 4, 3) ➞ 2
+        //Equal(1, 1, 1) ➞ 3
+        //Equal(3, 4, 1) ➞ 0
+
+        //Notes
+        //Your function must return 0, 2 or 3.
+
+        //[Theory]
+        //[InlineData(3, 4, 3, 2)]
+        //[InlineData(1, 1, 1, 3)]
+        //[InlineData(3, 4, 1, 0)]
+        //public void Equal_TreeInt_EqualsIntAmount(int first, int second, int third, int expected)
+        //{
+        //    /// Act
+        //    var result = _sut.Equal(first,second,third);
+        //    /// Assert
+        //    Assert.Equal(expected, result);
+        //}
+
     }
 }

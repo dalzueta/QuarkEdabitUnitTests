@@ -331,5 +331,99 @@ namespace Quark.Edabit.Exercises
 
             return result.ToString();
         }
+
+        public int Algorithms1_IntroductionToRecursion(int num)
+        {
+            int result = 1;
+            if (num > 0)
+            {
+                result = num * Algorithms1_IntroductionToRecursion(num - 1);
+            }
+            return result;            
+        }
+
+        public bool Between_Words(string first, string last, string word)
+        {
+            char[] numsOfFirst = first.ToCharArray();
+            char[] numsOfLast = last.ToCharArray();
+            char[] numsOfWord = word.ToCharArray();
+
+            int valFirst = 0;
+            int valLast = 0;
+            int valWord = 0;
+
+            for (int i = 0; i < numsOfFirst.Length; i++)
+            {
+                valFirst += numsOfFirst[i];
+            }
+            for (int i = 0; i < numsOfLast.Length; i++)
+            {
+                valLast += numsOfLast[i];
+            }
+            for(int i = 0; i < numsOfWord.Length; i++)
+            {
+                valWord += numsOfWord[i];
+            }
+
+            return valWord > valFirst && valWord < valLast;
+        }
+
+        public bool Is_Palindrome_Word(string word)
+        {            
+            for (int i = 0; i < word.Length/2; i++)
+            {
+                if (word[i] != word[(word.Length-1)-i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public string Vowel_Replacer(string word, char character)
+        {
+            StringBuilder result = new StringBuilder(word);
+
+            result.Replace('a', character);
+            result.Replace('e', character);
+            result.Replace('i', character);
+            result.Replace('o', character);
+            result.Replace('u', character);
+
+            return result.ToString();
+        }
+
+        public object Remove_Duplicates_From_Array(object[] _var)
+        {
+            List<object> auxList = _var.ToList();
+            List<object> result = new List<object>();
+            while (auxList.Count > 0)
+            {
+                if (!result.Contains(auxList[0]))
+                    result.Add(auxList[0]);
+                auxList.RemoveAll(x => x == auxList[0]);
+            }
+            return result.ToArray<object>();
+        }
+
+        //public int Equal(int first, int second, int third)
+        //{
+        //    List<int> numbers = new List<int>() { first, second, third };
+        //    List<int> auxlist = new List<int>();
+        //    int count = 0;
+        //    numbers.ForEach(n =>
+        //    {
+        //        if (!auxlist.Contains(n))
+        //        {
+        //            auxlist.Add(n);
+        //            numbers.ForEach(r =>
+        //            {
+        //                if (r == n) count++;
+        //            });
+        //        }
+        //    });
+
+        //    return count;
+        //}
     }
 }
