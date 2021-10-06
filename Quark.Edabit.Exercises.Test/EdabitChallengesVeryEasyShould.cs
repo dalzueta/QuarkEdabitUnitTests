@@ -538,8 +538,69 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        // Compare Strings by count of characters 
+        [Theory]
+        [InlineData("AB", "CD", true)]
+        [InlineData("ABC", "DE", false)]
+        public void Comp_StringsToCompareLength_LengthComparisonBoolean(string str1, string str2, bool expected)
+        {
+            /// Act
+            bool result = _sut.Comp(str1, str2);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
 
+        // Area of a rectangle  
+        [Theory]
+        [InlineData(3, 4, 12)]
+        [InlineData(-1, 5, -1)]
+        [InlineData(0, 2, -1)]
+        public void Area_RectangleSidesLength_RectangleArea(int side1, int side2, int expected)
+        {
+            /// Act
+            int result = _sut.Area(side1, side2);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
 
+        // Is the string odd or even?
+        [Theory]
+        [InlineData("apples", true)]
+        [InlineData("pears", false)]
+        [InlineData("cherry", true)]
+        public void OddOrEven_string_FalseIfOddTrueIfEven(string str, bool expected)
+        {
+            /// Act
+            bool result = _sut.OddOrEven(str);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
 
+        // Is the number even or odd?
+        [Theory]
+        [InlineData(3, "odd")]
+        [InlineData(146, "even")]
+        [InlineData(19, "odd")]
+        public void IsEvenOrOdd_Number_EvenOrOddString(int number, string expected)
+        {
+            /// Act
+            string result = _sut.IsEvenOrOdd(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Recursion: Length of a string
+        [Theory]
+        [InlineData("apple", 5)]
+        [InlineData("make", 4)]
+        [InlineData("a", 1)]
+        [InlineData("", 0)]
+        public void Length_Word_WordLength(string word, int expected)
+        {
+            /// Act
+            int result = _sut.Length(word);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
     }
 }
