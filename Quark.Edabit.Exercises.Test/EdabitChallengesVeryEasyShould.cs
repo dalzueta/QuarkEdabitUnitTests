@@ -602,5 +602,44 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+        // Max Min difference
+        [Theory]
+        [InlineData(new int[] { 10, 15, 20, 2, 10, 6 }, 18)]
+        [InlineData(new int[] { -3, 4, -9, -1, -2, 15 }, 24)]
+        [InlineData(new int[] { 4, 17, 12, 2, 10, 2 }, 15)]
+        public void Diff_ArrayOfNumbers_DifferenceBetweenMinAndMax(int[] numbers, int expected)
+        {
+            /// Act
+            int result = _sut.Diff(numbers);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Fix the error: Check whether a given number is odd
+        [Theory]
+        [InlineData(-5 , true)]
+        [InlineData(25, true)]
+        [InlineData(0, false)]
+        public void IsOdd_Number_TrueIfOdd(int number, bool expected)
+        {
+            /// Act
+            bool result = _sut.IsOdd(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        // Return a string as an Integer
+        [Theory]
+        [InlineData("6", 6)]
+        [InlineData("1000", 1000)]
+        [InlineData("12", 12)]
+        public void StringInt_string_ParsedInt(string number, int expected)
+        {
+            /// Act
+            int result = _sut.StringInt(number);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
     }
 }

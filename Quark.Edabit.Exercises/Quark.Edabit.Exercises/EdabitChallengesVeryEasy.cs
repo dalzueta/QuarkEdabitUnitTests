@@ -261,5 +261,28 @@ namespace Quark.Edabit.Exercises
             word = word.Remove(0, 1);
             return 1 + Length(word);
         }
+
+        public int Diff(int[] numbers)
+        {
+            int minNum = numbers[0];
+            int maxNum = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] > maxNum) maxNum = numbers[i];
+                if (numbers[i] < minNum) minNum = numbers[i];
+            }
+
+            return maxNum - minNum;
+        }
+
+        public bool IsOdd(int number)
+        {
+            return number % 2 != 0;
+        }
+
+        public int StringInt(string number)
+        {
+            return int.Parse(number);
+        }
     }
 }
