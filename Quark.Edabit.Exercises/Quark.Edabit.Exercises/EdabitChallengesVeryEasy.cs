@@ -226,5 +226,40 @@ namespace Quark.Edabit.Exercises
         {
             return string.IsNullOrEmpty(arg);
         }
+
+        public bool Comp(string str1, string str2)
+        {
+            return (str1.Length == str2.Length);
+        }
+
+        public int Area(int side1, int side2)
+        {
+            if (side1 < 1 || side2 < 1) return -1;
+            else return side1 * side2;
+        }
+
+        public bool OddOrEven(string str)
+        {
+            return (str.Length % 2 == 0);
+        }
+
+        public string IsEvenOrOdd(int number)
+        {
+            if(number % 2 == 0)
+            {
+                return "even";
+            }
+            else
+            {
+                return "odd";
+            }
+        }
+
+        public int Length(string word)
+        {
+            if (word == "") return 0;
+            word = word.Remove(0, 1);
+            return 1 + Length(word);
+        }
     }
 }
