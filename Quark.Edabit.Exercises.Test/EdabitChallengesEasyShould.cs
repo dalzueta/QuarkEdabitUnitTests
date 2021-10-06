@@ -95,9 +95,9 @@ namespace Quark.Edabit.Exercises.Test
 
         // Reverse the order of a string
         [Theory]
-        [InlineData("Hello World","dlroW olleH")]
+        [InlineData("Hello World", "dlroW olleH")]
         [InlineData("The quick brown fox.", ".xof nworb kciuq ehT")]
-        [InlineData("Edabit is really helpful", "!lufpleh yllaer si tibadE")]
+        [InlineData("Edabit is really helpful!", "!lufpleh yllaer si tibadE")]
         public void Reverse(string words, string expected)
         {
             /// Act
@@ -105,6 +105,64 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert 
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, new int[] { 2, 4, 6, 8 })]
+        [InlineData(new int[] { 43, 65, 23, 89, 53, 9, 6 }, new int[] { 6 })]
+        [InlineData(new int[] { 718, 991, 449, 644, 380, 440 }, new int[] { 718, 644, 380, 440 })]
+        public void No_Odds(int[] numbers, int[] expected)
+        {
+            /// Act
+            var result = _sut.NoOdds(numbers);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("abc", "CBA")]
+        [InlineData("hellothere", "EREHTOLLEH")]
+        [InlineData("input", "TUPNI")]
+        public void Reverse_Capitalize(string word, string expected)
+        {
+            /// Act
+            var result = _sut.ReverseCapitalize(word);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("Hello", 3, "Hellooo")]
+        [InlineData("hey", 6, "heyyyyyy")]
+        [InlineData("excuse me what?", 5, "excuse me what?????")]
+        public void Modify_Last(string word, int repeatedLastCharacter, string expected)
+        {
+            /// Act
+            var result = _sut.ModifyLast(word, repeatedLastCharacter);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3, 4 }, 3, 2)]
+        [InlineData(new int[] { 2, 4, 6, 8, 10 }, 8, 3)]
+        [InlineData(new int[] { 1, 3, 5, 7, 9 }, 11, -1)]
+        public void Search(int[] numbers, int item, int expected, int index = 0)
+        {
+            /// Act
+            var result = _sut.Search(numbers, item, index);
+            /// Assert 
+            Assert.Equal(expected, result);
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }

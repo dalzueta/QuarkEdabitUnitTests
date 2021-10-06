@@ -57,17 +57,70 @@ namespace Quark.Edabit.Exercises
             }
             return num;
         }
-
         public string Reverse(string words)
         {
-            string[] splittedWords = words.Split(" ");
             string wordsReversed = "";
-            for (int i= words.Length -1; i = 0;  i --)
+            for (int i= words.Length -1; i >= 0;  i --)
             {
-                var result = words[i].ToCharArray().Reverse();
+                wordsReversed += words[i];
+            }
 
-                wordsReversed += new string(result.ToArray());
+            return wordsReversed;
+        }
+
+        public int[] NoOdds(int[] numbers)
+        {
+            List<int> numbersWithOutOdds = new List<int>(); 
+            for (int i = 0; i< numbers.Length; i++)
+            {
+                if ( numbers[i] % 2 == 0)
+                {
+                    numbersWithOutOdds.Add(numbers[i]);
+                }
+            }
+
+            return numbersWithOutOdds.ToArray();
+        }
+
+        public string ReverseCapitalize(string word)
+        {
+            string wordsReversed = "";
+            for (int i = word.Length - 1; i >= 0; i--)
+            {
+                wordsReversed += word[i];
+            }
+
+            return wordsReversed.ToUpper();
+        }
+
+        public string ModifyLast(string word, int repeatedLastCharacter)
+        {
+            for( int i = 0; i < repeatedLastCharacter -1; i++)
+            {
+                word += word[word.Length-1];
+            }
+
+            return word;
+        }
+
+        public int Search(int[] numbers, int item, int index)
+        {
+            if (index >= numbers.Length)
+            {
+                return -1;
+            }
+            else
+            {
+                if (numbers[index] == item)
+                {
+                    return index;
+                }
+                else
+                {
+                   return Search(numbers, item, index + 1);
+                }
             }
         }
+
     }
 }
