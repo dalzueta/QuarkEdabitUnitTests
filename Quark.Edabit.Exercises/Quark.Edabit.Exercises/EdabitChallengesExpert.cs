@@ -5,9 +5,8 @@ namespace Quark.Edabit.Exercises
 {
     public class EdabitChallengesExpert
     {
-        public bool palindromeDescendant(int number)
+        public bool IsPalindromeDescendant(int number)
         {
-
             if (IsPalindromo(number))
             {
                 return true;
@@ -16,14 +15,12 @@ namespace Quark.Edabit.Exercises
             {
                 if (number > 999)
                 {
-                    var a = ObtainNextChild(number.ToString());
-                    if (palindromeDescendant(int.Parse(a))) return true;
-
+                    var child = ObtainNextChild(number.ToString());
+                    if (IsPalindromeDescendant(int.Parse(child))) return true;
                 }
             }
             return false;
         }
-
 
         public string ObtainNextChild(string strNumber)
         {
@@ -35,11 +32,9 @@ namespace Quark.Edabit.Exercises
             {
                 var firstTwoValues = strNumber.Substring(0, 2);
                 int sumTwoFirstValues = SumNumbers(int.Parse(firstTwoValues));
-
                 return string.Join("", sumTwoFirstValues, ObtainNextChild(strNumber.Substring(2)));
             }
         }
-
 
         private bool IsPalindromo(int number)
         {
@@ -47,20 +42,11 @@ namespace Quark.Edabit.Exercises
             return number == int.Parse(reverse);
         }
 
-        private string GetFirsTwoChars(ref string str)
-        {
-            var chars = str.Substring(0, 2);
-            str = str.Substring(2);
-            return chars;
-        }
-
         private int SumNumbers(int num)
         {
             var unid = num / 10;
             var desc = num % 10;
-
             return unid + desc;
-
         }
     }
 }
