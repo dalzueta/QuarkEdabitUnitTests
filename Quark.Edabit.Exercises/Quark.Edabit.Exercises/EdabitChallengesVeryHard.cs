@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Quark.Edabit.Exercises
@@ -72,6 +73,65 @@ namespace Quark.Edabit.Exercises
             }
 
             return simplifiedFraction;
+        }
+
+        public int TimeToGetLicense(string myName, int agentQuantity, string otherPeopleNames)
+        {
+            int timeToWait = 0;
+            int agentWorkingCont = 1;
+            string[] splittedOtherPeopleNames = otherPeopleNames.Split(" ");
+            Array.Resize<string>(ref splittedOtherPeopleNames,splittedOtherPeopleNames.Length+1);
+            splittedOtherPeopleNames[splittedOtherPeopleNames.Length-1] = myName;
+            Array.Sort(splittedOtherPeopleNames);
+
+            //Preguntar si es mejor usar un while o romper el for con un break
+            foreach (string name in splittedOtherPeopleNames)
+            {
+                
+                if (myName == name)
+                {
+                    timeToWait += 20;
+                    break;
+                }
+
+                if (agentWorkingCont < agentQuantity)
+                {
+                    agentWorkingCont += 1;
+                }
+                else
+                {
+                    timeToWait += 20;
+                    agentWorkingCont = 1;
+                }
+
+            }
+
+            return timeToWait;
+        }
+
+        public string payCalculator(float[] workingDayValues)
+        {
+
+            float regularWorkingHours = 0;
+            float overtimeWorkingHours = 0;
+
+            if (workingDayValues[0] > 17 || workingDayValues[1] > 17)
+            {
+                overtimeWorkingHours = workingDayValues[1] - Math.Max(17, workingDayValues[0]);
+                
+            }
+
+            if (workingDayValues[1] < 17 || workingDayValues[0] < 17)
+            {
+                regularWorkingHours = Math.Min(17, workingDayValues[1]) - workingDayValues[0];
+            }
+           
+            float regularPay = regularWorkingHours * workingDayValues[2];
+            float overtimePay = overtimeWorkingHours * workingDayValues[2] * workingDayValues[3];
+            
+            //refactorizar quitando regularPay y overtimePay?????????
+             
+            return (regularPay + overtimePay).ToString("C",new CultureInfo("en-us"));
         }
     }
 

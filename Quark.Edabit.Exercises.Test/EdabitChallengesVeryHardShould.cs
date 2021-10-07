@@ -53,5 +53,38 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("Eric", 2, "Adam Caroline Rebecca Frank", 40)]
+        [InlineData("Zebediah", 1, "Bob Jim Becky Pat", 100)]
+        [InlineData("Aaron", 3, "Jane Max Olivia Sam", 20)]
+
+        public void TimeToGetLicense(string myName, int agentQuantity, string otherPeopleNames, int expected)
+        {
+            /// Act
+            var result = _sut.TimeToGetLicense(myName, agentQuantity, otherPeopleNames);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+
+        [Theory]
+        [InlineData(new float[] { 9, 17, 30, 1.5f }, "$240.00")]
+        [InlineData(new float[] { 16, 18, 30, 1.8f }, "$84.00")]
+        [InlineData(new float[]{13.25f, 15, 30, 1.5f}, "$52.50")]
+        [InlineData(new float[] { 18, 19, 30, 2f }, "$60.00")]
+        [InlineData(new float[] { 17, 19, 30, 3f }, "$180.00")]
+
+        public void calculatePay(float[] workingDayValues, string expected)
+        {
+            /// Act
+            var result = _sut.payCalculator(workingDayValues);
+            /// Assert
+            Assert.Equal(expected, result);
+        }
+
+
+
+
     }
 }
