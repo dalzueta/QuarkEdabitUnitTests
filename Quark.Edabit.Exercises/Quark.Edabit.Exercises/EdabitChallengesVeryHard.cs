@@ -200,13 +200,7 @@ namespace Quark.Edabit.Exercises
             {
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    if (IsKnight(board[i, j]))
-                    {
-                        if (IsInDanger(i, j, board))
-                        {
-                            return true;
-                        }
-                    }
+                    if (IsKnight(board[i, j]) && IsInDanger(i, j, board)) return true;
                 }
             }
             return false;
@@ -214,24 +208,30 @@ namespace Quark.Edabit.Exercises
 
         public bool IsInDanger(int row, int column, int[,] matrix)
         {
-            var posiblePositions = PosibleEnemyPositions(row, column);
+            var posiblePositions = PosibleEnemyPositions(row, column, matrix.GetLength(0), matrix.GetLength(1));
             for (int i = 0; i < posiblePositions.GetLength(0); i++)
             {
-                try
-                {
-                    if (IsKnight(matrix[posiblePositions[i, 0], posiblePositions[i, 1]])) { return true; }
-                }
-                catch (Exception)
-                {
-                }
+                if (IsKnight(matrix[posiblePositions[i][0], posiblePositions[i][1]])) return true;
             }
             return false;
         }
 
-        public int[,] PosibleEnemyPositions(int row, int col) => new[,] { { row + 2, col + 1 }, { row + 2, col - 1 }, { row - 2, col + 1 }, { row + 1, col - 2 }, { row - 2, col - 1 }, { row - 1, col - 2 }, { row + 1, col + 2 }, { row - 1, col + 2 } };
+        public static int[][] PosibleEnemyPositions(int row, int col, int maxRow, int maxCol)
+        {
+            List<int[]> positions = new List<int[]>();
+            int[,] values = { { 2, 1 }, { 2, -1 }, { -2, 1 }, { 1, -2 }, { -2, -1 }, { -1, -2 }, { 1, 2 }, { -1, 2 } };
+
+            for (int i = 0; i < values.GetLength(0); i++)
+            {
+                int newRow = values[i, 0] + row;
+                int newCol = values[i, 1] + col;
+
+                if ((0 < newRow && newRow < maxRow) && (0 < newCol && newCol < maxCol)) { positions.Add(new int[] { newRow, newCol }); }
+            }
+            return positions.ToArray();
+        }
 
         private bool IsKnight(int n) => n == 1;
-
     }
 
 }

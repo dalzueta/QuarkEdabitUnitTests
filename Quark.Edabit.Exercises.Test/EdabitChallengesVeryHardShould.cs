@@ -149,6 +149,27 @@ namespace Quark.Edabit.Exercises.Test
             /// Assert
             Assert.False(result);
         }
+        [Fact]
+        public void AKnightInDanger_9X9Board_IsInDanger()
+        {
+            /// Arrange
+            int[,] chessBoard = new int[,]
+            {
+                { 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0, 1 },
+                { 0, 0, 0, 0, 1, 0, 1, 0, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 0, 0, 1, 1 },
+                { 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+                { 0, 0, 0, 1, 1, 0, 0, 0, 0 }
+            };
+            /// Act
+            var result = _sut.IsInDangerKnight(chessBoard);
+            /// Assert
+            Assert.True(result);
+        }
 
         [Fact]
         public void AKnightInDanger_IsInDanger()
