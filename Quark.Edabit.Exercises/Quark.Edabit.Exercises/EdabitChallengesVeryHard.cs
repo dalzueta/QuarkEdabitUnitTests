@@ -23,22 +23,22 @@ namespace Quark.Edabit.Exercises
 
             return true;
         }
-        public string GetFibonacciWordSequence(int sequenceLength) 
+        public string GetFibonacciWordSequence(int sequenceLength)
         {
-            if (sequenceLength < 2 ) return "invalid";
+            if (sequenceLength < 2) return "invalid";
 
             List<string> FibonacciWords = new List<string> { "b", "a" };
 
             for (var i = 2; i < sequenceLength; i++)
             {
-                FibonacciWords.Add(FibonacciWords[i-1] + FibonacciWords[i-2]);
+                FibonacciWords.Add(FibonacciWords[i - 1] + FibonacciWords[i - 2]);
             }
 
             string result = "";
-            
+
             foreach (string FibonacciWord in FibonacciWords)
             {
-                 result += (result != "") ? ", " + FibonacciWord : FibonacciWord ;
+                result += (result != "") ? ", " + FibonacciWord : FibonacciWord;
             }
 
             return result;
@@ -80,14 +80,14 @@ namespace Quark.Edabit.Exercises
             int timeToWait = 0;
             int agentWorkingCont = 1;
             string[] splittedOtherPeopleNames = otherPeopleNames.Split(" ");
-            Array.Resize<string>(ref splittedOtherPeopleNames,splittedOtherPeopleNames.Length+1);
-            splittedOtherPeopleNames[splittedOtherPeopleNames.Length-1] = myName;
+            Array.Resize<string>(ref splittedOtherPeopleNames, splittedOtherPeopleNames.Length + 1);
+            splittedOtherPeopleNames[splittedOtherPeopleNames.Length - 1] = myName;
             Array.Sort(splittedOtherPeopleNames);
 
             //Preguntar si es mejor usar un while o romper el for con un break
             foreach (string name in splittedOtherPeopleNames)
             {
-                
+
                 if (myName == name)
                 {
                     timeToWait += 20;
@@ -118,20 +118,20 @@ namespace Quark.Edabit.Exercises
             if (workingDayValues[0] > 17 || workingDayValues[1] > 17)
             {
                 overtimeWorkingHours = workingDayValues[1] - Math.Max(17, workingDayValues[0]);
-                
+
             }
 
             if (workingDayValues[1] < 17 || workingDayValues[0] < 17)
             {
                 regularWorkingHours = Math.Min(17, workingDayValues[1]) - workingDayValues[0];
             }
-           
+
             float regularPay = regularWorkingHours * workingDayValues[2];
             float overtimePay = overtimeWorkingHours * workingDayValues[2] * workingDayValues[3];
-            
+
             //refactorizar quitando regularPay y overtimePay?????????
-             
-            return (regularPay + overtimePay).ToString("C",new CultureInfo("en-us"));
+
+            return (regularPay + overtimePay).ToString("C", new CultureInfo("en-us"));
         }
 
         public bool CheckIfAnyKnightCanCapture(int[,] chessBoard)
@@ -193,7 +193,45 @@ namespace Quark.Edabit.Exercises
         {
             return (chessBoard[x, y] == 1);
         }
+
+        public bool IsInDangerKnight(int[,] board)
+        {
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    if (IsKnight(board[i, j]))
+                    {
+                        if (IsInDanger(i, j, board))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool IsInDanger(int row, int column, int[,] matrix)
+        {
+            var posiblePositions = PosibleEnemyPositions(row, column);
+            for (int i = 0; i < posiblePositions.GetLength(0); i++)
+            {
+                try
+                {
+                    if (IsKnight(matrix[posiblePositions[i, 0], posiblePositions[i, 1]])) { return true; }
+                }
+                catch (Exception)
+                {
+                }
+            }
+            return false;
+        }
+
+        public int[,] PosibleEnemyPositions(int row, int col) => new[,] { { row + 2, col + 1 }, { row + 2, col - 1 }, { row - 2, col + 1 }, { row + 1, col - 2 }, { row - 2, col - 1 }, { row - 1, col - 2 }, { row + 1, col + 2 }, { row - 1, col + 2 } };
+
+        private bool IsKnight(int n) => n == 1;
+
     }
 
 }
-

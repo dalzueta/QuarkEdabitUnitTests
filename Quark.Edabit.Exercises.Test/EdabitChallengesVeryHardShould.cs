@@ -33,7 +33,8 @@ namespace Quark.Edabit.Exercises.Test
         [InlineData(1, "invalid")]
         [InlineData(7, "b, a, ab, aba, abaab, abaababa, abaababaabaab")]
 
-        public void GetFibonacciWordSequence(int sequenceLength, string expected) {
+        public void GetFibonacciWordSequence(int sequenceLength, string expected)
+        {
             /// Act
             var result = _sut.GetFibonacciWordSequence(sequenceLength);
             /// Assert
@@ -125,6 +126,49 @@ namespace Quark.Edabit.Exercises.Test
             var result = _sut.CheckIfAnyKnightCanCapture(chessBoard);
             /// Assert
             Assert.False(result);
+        }
+
+        //Knights on a board - Alternative Version
+        [Fact]
+        public void AKnightInDanger_IsNotInDanger()
+        {
+            /// Arrange
+            int[,] chessBoard = new int[,]
+            {
+                { 0, 0, 0, 1, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 0, 1, 0, 1, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 0, 0, 1 },
+                { 0, 0, 0, 0, 1, 0, 0, 0 }
+            };
+            /// Act
+            var result = _sut.IsInDangerKnight(chessBoard);
+            /// Assert
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void AKnightInDanger_IsInDanger()
+        {
+            /// Arrange
+            int[,] chessBoard = new int[,]
+            {
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {0, 0, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 1, 0, 1, 0},
+                {0, 0, 0, 0, 0, 1, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {1, 0, 0, 1, 0, 0, 0, 1}
+            };
+            /// Act
+            var result = _sut.IsInDangerKnight(chessBoard);
+            /// Assert
+            Assert.True(result);
         }
 
     }
