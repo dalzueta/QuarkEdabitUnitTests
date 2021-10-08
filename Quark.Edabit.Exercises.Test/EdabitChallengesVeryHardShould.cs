@@ -54,6 +54,7 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        //New driving licence
         [Theory]
         [InlineData("Eric", 2, "Adam Caroline Rebecca Frank", 40)]
         [InlineData("Zebediah", 1, "Bob Jim Becky Pat", 100)]
@@ -67,11 +68,11 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
-
+        //Working 9 to 5
         [Theory]
         [InlineData(new float[] { 9, 17, 30, 1.5f }, "$240.00")]
         [InlineData(new float[] { 16, 18, 30, 1.8f }, "$84.00")]
-        [InlineData(new float[]{13.25f, 15, 30, 1.5f}, "$52.50")]
+        [InlineData(new float[] { 13.25f, 15, 30, 1.5f }, "$52.50")]
         [InlineData(new float[] { 18, 19, 30, 2f }, "$60.00")]
         [InlineData(new float[] { 17, 19, 30, 3f }, "$180.00")]
 
@@ -83,8 +84,48 @@ namespace Quark.Edabit.Exercises.Test
             Assert.Equal(expected, result);
         }
 
+        //Knights on a board
+        [Fact]
+        public void AKnightIsInDanger()
+        {
+            /// Arrange
+            int[,] chessBoard = new int[,]
+            {
+                { 0, 0, 0, 1, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 0, 1, 0, 1, 0 },
+                { 0, 1, 0, 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 0, 0, 0, 1 },
+                { 0, 0, 0, 0, 1, 0, 0, 0 }
+            };
+            /// Act
+            var result = _sut.CheckIfAnyKnightCanCapture(chessBoard);
+            /// Assert
+            Assert.True(result);
+        }
 
-
+        [Fact]
+        public void AKnightIsNotInDanger()
+        {
+            /// Arrange
+            int[,] chessBoard = new int[,]
+            {
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {0, 0, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 1, 0, 1, 0},
+                {0, 0, 0, 0, 0, 1, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0},
+                {1, 0, 0, 1, 0, 0, 0, 1}
+            };
+            /// Act
+            var result = _sut.CheckIfAnyKnightCanCapture(chessBoard);
+            /// Assert
+            Assert.False(result);
+        }
 
     }
 }

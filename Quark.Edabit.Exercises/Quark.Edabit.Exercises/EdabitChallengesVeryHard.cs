@@ -133,6 +133,66 @@ namespace Quark.Edabit.Exercises
              
             return (regularPay + overtimePay).ToString("C",new CultureInfo("en-us"));
         }
+
+        public bool CheckIfAnyKnightCanCapture(int[,] chessBoard)
+        {
+            bool canCapture = true;
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (chessBoard[i, j] == 1)
+                    {
+                        int oneUp = i - 1;
+                        int twoUp = i - 2;
+                        int oneDown = i + 1;
+                        int twoDown = i + 2;
+                        int oneLeft = j - 1;
+                        int twoLeft = j - 2;
+                        int oneRight = j + 1;
+                        int twoRight = j + 2;
+                        if (i >= 1 && j >= 2)
+                        {
+                            if (CheckPosition(oneUp, twoLeft, chessBoard)) return false;
+                        }
+                        if (i >= 1 && j <= 5)
+                        {
+                            if (CheckPosition(oneUp, twoRight, chessBoard)) return false;
+                        }
+                        if (i <= 6 && j <= 5)
+                        {
+                            if (CheckPosition(oneDown, twoRight, chessBoard)) return false;
+                        }
+                        if (i <= 6 && j >= 2)
+                        {
+                            if (CheckPosition(oneDown, twoLeft, chessBoard)) return false;
+                        }
+                        if (i >= 2 && j <= 6)
+                        {
+                            if (CheckPosition(twoUp, oneRight, chessBoard)) return false;
+                        }
+                        if (i <= 5 && j <= 6)
+                        {
+                            if (CheckPosition(twoDown, oneRight, chessBoard)) return false;
+                        }
+                        if (i >= 2 && j >= 1)
+                        {
+                            if (CheckPosition(twoUp, oneLeft, chessBoard)) return false;
+                        }
+                        if (i <= 5 && j >= 1)
+                        {
+                            if (CheckPosition(twoDown, oneLeft, chessBoard)) return false;
+                        }
+                    }
+                }
+            }
+            return canCapture;
+        }
+
+        public bool CheckPosition(int x, int y, int[,] chessBoard)
+        {
+            return (chessBoard[x, y] == 1);
+        }
     }
 
 }
